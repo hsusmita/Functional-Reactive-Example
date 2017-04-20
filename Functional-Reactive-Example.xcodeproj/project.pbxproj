@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047EB1EA74102003AF690 /* AppDelegate.swift */; };
-		780047EE1EA74102003AF690 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047ED1EA74102003AF690 /* ViewController.swift */; };
+		780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047ED1EA74102003AF690 /* BindingViewController.swift */; };
 		780047F11EA74102003AF690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780047EF1EA74102003AF690 /* Main.storyboard */; };
 		780047F41EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 780047F21EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld */; };
 		780047F61EA74102003AF690 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 780047F51EA74102003AF690 /* Assets.xcassets */; };
 		780047F91EA74102003AF690 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780047F71EA74102003AF690 /* LaunchScreen.storyboard */; };
 		780048041EA74102003AF690 /* Functional_Reactive_ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048031EA74102003AF690 /* Functional_Reactive_ExampleTests.swift */; };
 		7800480F1EA74102003AF690 /* Functional_Reactive_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800480E1EA74102003AF690 /* Functional_Reactive_ExampleUITests.swift */; };
+		7800481D1EA89B5C003AF690 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481C1EA89B5C003AF690 /* MenuViewController.swift */; };
+		780048201EA89ED8003AF690 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481F1EA89ED8003AF690 /* Routable.swift */; };
+		780048221EA8A0D9003AF690 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048211EA8A0D9003AF690 /* Router.swift */; };
 		79B22249D2D08EEEF57B4C0A /* Pods_Functional_Reactive_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,7 +41,7 @@
 /* Begin PBXFileReference section */
 		780047E81EA74102003AF690 /* Functional-Reactive-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Functional-Reactive-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		780047EB1EA74102003AF690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		780047ED1EA74102003AF690 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		780047ED1EA74102003AF690 /* BindingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingViewController.swift; sourceTree = "<group>"; };
 		780047F01EA74102003AF690 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		780047F31EA74102003AF690 /* Functional_Reactive_Example.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Functional_Reactive_Example.xcdatamodel; sourceTree = "<group>"; };
 		780047F51EA74102003AF690 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,6 +53,9 @@
 		7800480A1EA74102003AF690 /* Functional-Reactive-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Functional-Reactive-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7800480E1EA74102003AF690 /* Functional_Reactive_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functional_Reactive_ExampleUITests.swift; sourceTree = "<group>"; };
 		780048101EA74102003AF690 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7800481C1EA89B5C003AF690 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7800481F1EA89ED8003AF690 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
+		780048211EA8A0D9003AF690 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
 		BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Functional_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -115,13 +121,16 @@
 		780047EA1EA74102003AF690 /* Functional-Reactive-Example */ = {
 			isa = PBXGroup;
 			children = (
+				7800481E1EA89E46003AF690 /* Binding */,
 				780047EB1EA74102003AF690 /* AppDelegate.swift */,
-				780047ED1EA74102003AF690 /* ViewController.swift */,
+				7800481C1EA89B5C003AF690 /* MenuViewController.swift */,
 				780047EF1EA74102003AF690 /* Main.storyboard */,
 				780047F51EA74102003AF690 /* Assets.xcassets */,
 				780047F71EA74102003AF690 /* LaunchScreen.storyboard */,
 				780047FA1EA74102003AF690 /* Info.plist */,
 				780047F21EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld */,
+				7800481F1EA89ED8003AF690 /* Routable.swift */,
+				780048211EA8A0D9003AF690 /* Router.swift */,
 			);
 			path = "Functional-Reactive-Example";
 			sourceTree = "<group>";
@@ -142,6 +151,14 @@
 				780048101EA74102003AF690 /* Info.plist */,
 			);
 			path = "Functional-Reactive-ExampleUITests";
+			sourceTree = "<group>";
+		};
+		7800481E1EA89E46003AF690 /* Binding */ = {
+			isa = PBXGroup;
+			children = (
+				780047ED1EA74102003AF690 /* BindingViewController.swift */,
+			);
+			name = Binding;
 			sourceTree = "<group>";
 		};
 		DC6BEDFF542037A827ADBF2E /* Frameworks */ = {
@@ -339,9 +356,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				780047EE1EA74102003AF690 /* ViewController.swift in Sources */,
+				780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */,
 				780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */,
 				780047F41EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld in Sources */,
+				7800481D1EA89B5C003AF690 /* MenuViewController.swift in Sources */,
+				780048221EA8A0D9003AF690 /* Router.swift in Sources */,
+				780048201EA89ED8003AF690 /* Routable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +612,7 @@
 				780048151EA74102003AF690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		780048161EA74102003AF690 /* Build configuration list for PBXNativeTarget "Functional-Reactive-ExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -600,6 +621,7 @@
 				780048181EA74102003AF690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		780048191EA74102003AF690 /* Build configuration list for PBXNativeTarget "Functional-Reactive-ExampleUITests" */ = {
 			isa = XCConfigurationList;
@@ -608,6 +630,7 @@
 				7800481B1EA74102003AF690 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
