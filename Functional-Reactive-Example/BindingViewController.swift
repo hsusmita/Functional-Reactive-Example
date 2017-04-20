@@ -13,45 +13,62 @@ import ReactiveCocoa
 
 class BindingViewController: UIViewController {
 
-	@IBOutlet weak var textField: UITextField!
-	let x: MutableProperty<UIColor> = MutableProperty(UIColor.red)
+	@IBOutlet weak var label: UILabel!
+	@IBOutlet weak var textView: UITextView!
+	@IBOutlet weak var nextButton: UIButton!
+	@IBOutlet weak var statusLabel: UILabel!
+
+	let result: MutableProperty<Bool> = MutableProperty(false)
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let binding: BindingTarget<UIColor> = self.reactive.makeBindingTarget { (controller, color) in
-				controller.view.backgroundColor = color
-				controller.textField.textColor = color
-		}
-		let sp = textField.reactive.continuousTextValues.flatMap(FlattenStrategy.concat) { (string) in
-			return SignalProducer<UIColor, NoError> { (observer, disposable) in
-				if (string?.characters.count)! > 10 {
-					observer.send(value: UIColor.blue)
-				} else {
-					observer.send(value: UIColor.red)
-				}
-				observer.sendCompleted()
-			}
-		}
-//		textField.reactive.textColor <~ sp
-		x <~ sp
-		binding <~ sp
-		x.signal.observeValues { (color) in
-			print(color)
-		}
-		
-		/*
-			How to bind?
-		*/
-		let label = UILabel()
-		label.text = textField.text
-		
-		label.reactive.text <~ textField.reactive.continuousTextValues
-
+		handleNonReactively()
 	}
+	
+	func handleNonReactively() {
+		// Non Reactive way
+		label.text = textView.text
+		textView.delegate = self
+	}
+	
+	func handleReactively() {
+		// Reactive Binding
+		label.reactive.text <~ textView.reactive.continuousTextValues
+		
+		// MutableProperty as Binding Target
+		let signal: Signal<Bool, NoError> = textView.reactive.continuousTextValues.map { (string) in
+			guard let string = string else {
+				return false
+			}
+			return string.characters.count > 20
+		}
+		let _ = result <~ signal
+		
+		// UIKit Binding target
+		nextButton.reactive.isEnabled <~ result
+		
+		// Custom Binding Target
+		let bindingTarget: BindingTarget<Bool> = statusLabel.reactive.makeBindingTarget { label, result in
+			label.backgroundColor = result ? UIColor.green : UIColor.red
+			label.text = result ? "Valid" :  "Not valid"
+		}
+		let _ = bindingTarget <~ result // MutableProperty as Binding Source
+	}
+}
 
-	override func didReceiveMemoryWarning() {
-		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
+extension BindingViewController: UITextViewDelegate {
+	func textViewDidChange(_ textView: UITextView) {
+		label.text = textView.text
+		
+		if let string = textView.text, string.characters.count > 20 {
+			statusLabel.backgroundColor = UIColor.green
+			statusLabel.text = "Valid"
+			nextButton.isEnabled = true
+		} else {
+			statusLabel.backgroundColor = UIColor.red
+			statusLabel.text = "Not Valid"
+			nextButton.isEnabled = false
+		}
 	}
 }
 
