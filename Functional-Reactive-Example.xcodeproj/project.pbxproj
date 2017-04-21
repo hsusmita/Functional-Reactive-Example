@@ -18,6 +18,7 @@
 		7800481D1EA89B5C003AF690 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481C1EA89B5C003AF690 /* MenuViewController.swift */; };
 		780048201EA89ED8003AF690 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481F1EA89ED8003AF690 /* Routable.swift */; };
 		780048221EA8A0D9003AF690 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048211EA8A0D9003AF690 /* Router.swift */; };
+		780048261EAA120E003AF690 /* SignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048251EAA120E003AF690 /* SignalViewController.swift */; };
 		79B22249D2D08EEEF57B4C0A /* Pods_Functional_Reactive_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		7800481C1EA89B5C003AF690 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7800481F1EA89ED8003AF690 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		780048211EA8A0D9003AF690 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		780048251EAA120E003AF690 /* SignalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalViewController.swift; sourceTree = "<group>"; };
 		ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
 		BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Functional_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				780047F21EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld */,
 				7800481F1EA89ED8003AF690 /* Routable.swift */,
 				780048211EA8A0D9003AF690 /* Router.swift */,
+				780048271EAA121A003AF690 /* Signal */,
 			);
 			path = "Functional-Reactive-Example";
 			sourceTree = "<group>";
@@ -159,6 +162,14 @@
 				780047ED1EA74102003AF690 /* BindingViewController.swift */,
 			);
 			name = Binding;
+			sourceTree = "<group>";
+		};
+		780048271EAA121A003AF690 /* Signal */ = {
+			isa = PBXGroup;
+			children = (
+				780048251EAA120E003AF690 /* SignalViewController.swift */,
+			);
+			name = Signal;
 			sourceTree = "<group>";
 		};
 		DC6BEDFF542037A827ADBF2E /* Frameworks */ = {
@@ -358,6 +369,7 @@
 			files = (
 				780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */,
 				780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */,
+				780048261EAA120E003AF690 /* SignalViewController.swift in Sources */,
 				780047F41EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld in Sources */,
 				7800481D1EA89B5C003AF690 /* MenuViewController.swift in Sources */,
 				780048221EA8A0D9003AF690 /* Router.swift in Sources */,

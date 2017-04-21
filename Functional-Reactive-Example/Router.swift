@@ -13,13 +13,14 @@ class Router {
 	
 	enum Destination {
 		case binding
+		case signal
 		
 		var viewController: UIViewController? {
 			switch self {
 			case .binding:
 				return BindingViewController.storyboardInstance
-				
-				
+			case .signal:
+				return SignalViewController.storyboardInstance
 			}
 		}
 	}
@@ -38,7 +39,6 @@ class Router {
 }
 
 extension Routable where Self: UIViewController {
-	
 	static var storyboardInstance: Self? {
 		let storyboard = UIStoryboard(name: storyboardName, bundle: Bundle.main)
 		let viewController = storyboard.instantiateViewController(withIdentifier: storyboardId)

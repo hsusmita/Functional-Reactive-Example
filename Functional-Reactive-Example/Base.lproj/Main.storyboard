@@ -57,6 +57,24 @@
             </objects>
             <point key="canvasLocation" x="282.39999999999998" y="64.31784107946028"/>
         </scene>
+        <!--Signal View Controller-->
+        <scene sceneID="f7T-ZR-zFb">
+            <objects>
+                <viewController storyboardIdentifier="SignalViewController" id="1wJ-xo-POW" customClass="SignalViewController" customModule="Functional_Reactive_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WrL-xZ-wb3"/>
+                        <viewControllerLayoutGuide type="bottom" id="FMm-ph-jvD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z4C-hD-uvn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mCp-Gt-aOi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="396" y="793"/>
+        </scene>
         <!--Binding View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>

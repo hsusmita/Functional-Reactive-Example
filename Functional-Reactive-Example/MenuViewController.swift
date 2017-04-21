@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 
 	@IBOutlet private weak var tableView: UITableView!
-	fileprivate var menuArray: [String] = ["Binding"]
+	fileprivate var menuArray: [String] = ["Binding", "Create Signal"]
 	fileprivate var router: Router?
 	
     override func viewDidLoad() {
@@ -39,6 +39,11 @@ extension MenuViewController: UITableViewDataSource {
 
 extension MenuViewController: UITableViewDelegate {
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		router?.present(destination: .binding)
+		switch indexPath.row {
+		case 0:
+			router?.present(destination: .binding)
+		default:
+			router?.present(destination: .signal)
+		}
 	}
 }
