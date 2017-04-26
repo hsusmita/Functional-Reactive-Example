@@ -25,6 +25,7 @@
 		78BEA6B21EAE0ADA00E31F56 /* GameGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */; };
 		78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */; };
 		78BEA6B61EAF2D0F00E31F56 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */; };
+		78BEA6B81EB088CF00E31F56 /* CombineOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6B71EB088CF00E31F56 /* CombineOperatorViewController.swift */; };
 		79B22249D2D08EEEF57B4C0A /* Pods_Functional_Reactive_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameGrid.xib; sourceTree = "<group>"; };
 		78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
+		78BEA6B71EB088CF00E31F56 /* CombineOperatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombineOperatorViewController.swift; path = Combine/CombineOperatorViewController.swift; sourceTree = "<group>"; };
 		ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
 		BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Functional_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			children = (
 				7800481E1EA89E46003AF690 /* Binding */,
 				780048271EAA121A003AF690 /* Signal */,
+				78BEA6B91EB088D500E31F56 /* Combine */,
 				780047EB1EA74102003AF690 /* AppDelegate.swift */,
 				7800481C1EA89B5C003AF690 /* MenuViewController.swift */,
 				780047EF1EA74102003AF690 /* Main.storyboard */,
@@ -188,6 +191,14 @@
 				78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */,
 			);
 			name = Signal;
+			sourceTree = "<group>";
+		};
+		78BEA6B91EB088D500E31F56 /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				78BEA6B71EB088CF00E31F56 /* CombineOperatorViewController.swift */,
+			);
+			name = Combine;
 			sourceTree = "<group>";
 		};
 		DC6BEDFF542037A827ADBF2E /* Frameworks */ = {
@@ -390,6 +401,7 @@
 			files = (
 				780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */,
 				780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */,
+				78BEA6B81EB088CF00E31F56 /* CombineOperatorViewController.swift in Sources */,
 				780048261EAA120E003AF690 /* SignalViewController.swift in Sources */,
 				78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */,
 				78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */,

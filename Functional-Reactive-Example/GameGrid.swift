@@ -83,6 +83,11 @@ class GameGrid: UIView {
 		}*/
 	}
 	
+	func stop() {
+		animationCounter.stopTimer()
+		counter.stopTimer()
+	}
+	
 /*	func configAutoscrollTimer() {
 		timer = Timer.scheduledTimer(timeInterval: 0.03, target: self, selector: #selector(autoScrollView), userInfo: nil, repeats: true)
 	}
