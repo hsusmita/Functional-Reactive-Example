@@ -19,6 +19,12 @@
 		780048201EA89ED8003AF690 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481F1EA89ED8003AF690 /* Routable.swift */; };
 		780048221EA8A0D9003AF690 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048211EA8A0D9003AF690 /* Router.swift */; };
 		780048261EAA120E003AF690 /* SignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048251EAA120E003AF690 /* SignalViewController.swift */; };
+		78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */; };
+		78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */; };
+		78BEA6B01EAE07ED00E31F56 /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AF1EAE07ED00E31F56 /* GameGrid.swift */; };
+		78BEA6B21EAE0ADA00E31F56 /* GameGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */; };
+		78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */; };
+		78BEA6B61EAF2D0F00E31F56 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */; };
 		79B22249D2D08EEEF57B4C0A /* Pods_Functional_Reactive_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +64,12 @@
 		7800481F1EA89ED8003AF690 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		780048211EA8A0D9003AF690 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		780048251EAA120E003AF690 /* SignalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalViewController.swift; sourceTree = "<group>"; };
+		78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCounter.swift; sourceTree = "<group>"; };
+		78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnScheduler.swift; sourceTree = "<group>"; };
+		78BEA6AF1EAE07ED00E31F56 /* GameGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
+		78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameGrid.xib; sourceTree = "<group>"; };
+		78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
+		78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
 		ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
 		BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Functional_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				7800481E1EA89E46003AF690 /* Binding */,
+				780048271EAA121A003AF690 /* Signal */,
 				780047EB1EA74102003AF690 /* AppDelegate.swift */,
 				7800481C1EA89B5C003AF690 /* MenuViewController.swift */,
 				780047EF1EA74102003AF690 /* Main.storyboard */,
@@ -133,7 +146,10 @@
 				780047F21EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld */,
 				7800481F1EA89ED8003AF690 /* Routable.swift */,
 				780048211EA8A0D9003AF690 /* Router.swift */,
-				780048271EAA121A003AF690 /* Signal */,
+				78BEA6AF1EAE07ED00E31F56 /* GameGrid.swift */,
+				78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */,
+				78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */,
+				78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */,
 			);
 			path = "Functional-Reactive-Example";
 			sourceTree = "<group>";
@@ -168,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				780048251EAA120E003AF690 /* SignalViewController.swift */,
+				78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */,
+				78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */,
 			);
 			name = Signal;
 			sourceTree = "<group>";
@@ -251,7 +269,8 @@
 				TargetAttributes = {
 					780047E71EA74102003AF690 = {
 						CreatedOnToolsVersion = 8.2.1;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = HP3Q6K3LF3;
+						ProvisioningStyle = Automatic;
 					};
 					780047FE1EA74102003AF690 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -293,7 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				780047F91EA74102003AF690 /* LaunchScreen.storyboard in Resources */,
+				78BEA6B21EAE0ADA00E31F56 /* GameGrid.xib in Resources */,
 				780047F61EA74102003AF690 /* Assets.xcassets in Resources */,
+				78BEA6B61EAF2D0F00E31F56 /* GridCollectionViewCell.xib in Resources */,
 				780047F11EA74102003AF690 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,8 +391,12 @@
 				780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */,
 				780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */,
 				780048261EAA120E003AF690 /* SignalViewController.swift in Sources */,
+				78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */,
+				78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */,
+				78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */,
 				780047F41EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld in Sources */,
 				7800481D1EA89B5C003AF690 /* MenuViewController.swift in Sources */,
+				78BEA6B01EAE07ED00E31F56 /* GameGrid.swift in Sources */,
 				780048221EA8A0D9003AF690 /* Router.swift in Sources */,
 				780048201EA89ED8003AF690 /* Routable.swift in Sources */,
 			);
@@ -524,7 +549,8 @@
 			baseConfigurationReference = F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HP3Q6K3LF3;
 				INFOPLIST_FILE = "Functional-Reactive-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fueled.Functional-Reactive-Example";
@@ -538,7 +564,8 @@
 			baseConfigurationReference = ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = HP3Q6K3LF3;
 				INFOPLIST_FILE = "Functional-Reactive-Example/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Fueled.Functional-Reactive-Example";

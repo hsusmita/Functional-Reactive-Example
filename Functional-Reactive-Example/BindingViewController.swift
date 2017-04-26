@@ -33,7 +33,6 @@ class BindingViewController: UIViewController {
 	
 	func handleReactively() {
 		// Reactive Binding
-		
 		label.reactive.text <~ textView.reactive.continuousTextValues
 		
 		// MutableProperty as Binding Target
@@ -54,39 +53,6 @@ class BindingViewController: UIViewController {
 			label.text = result ? "Valid" :  "Not valid"
 		}
 		let _ = bindingTarget <~ result // MutableProperty as Binding Source
-		let observer = Observer<Bool, NoError> { (event) in
-			switch event {
-			case let .value(v):
-				print("value is \(v)")
-				
-			default:
-				break
-			}
-		}
-		
-		let observer2 = Observer<Bool, NoError> { (event) in
-			switch event {
-			case let .value(v):
-				print("value is \(v) observer2")
-				
-			default:
-				break
-			}
-		}
-		result.signal.observe(observer)
-		observer.send(value: true)
-		
-		//An observer is something which defines the ways to handle different events of a signal.
-		
-		result.signal.observe(observer, during: self.reactive.lifetime)
-		let (sig, sink) = Signal<Int, NoError>.pipe()
-		sink.send(value: 1)
-		
-		let gesture = UITapGestureRecognizer(target: self, action: #selector(handleSelector(gesture:)))
-	}
-	
-	func handleSelector(gesture: UITapGestureRecognizer) {
-		
 	}
 }
 

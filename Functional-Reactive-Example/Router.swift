@@ -11,16 +11,30 @@ import UIKit
 
 class Router {
 	
-	enum Destination {
+	enum Destination: Int {
+		case pureFunction = 0
 		case binding
 		case signal
 		
 		var viewController: UIViewController? {
 			switch self {
+			case .pureFunction:
+				return BindingViewController.storyboardInstance
 			case .binding:
 				return BindingViewController.storyboardInstance
 			case .signal:
 				return SignalViewController.storyboardInstance
+			}
+		}
+		
+		var title: String {
+			switch self {
+			case .pureFunction:
+				return "Pure vs Impure"
+			case .binding:
+				return "Binding"
+			case .signal:
+				return "Create Signal"
 			}
 		}
 	}

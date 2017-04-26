@@ -11,20 +11,44 @@ import ReactiveSwift
 import Result
 
 class SignalViewController: UIViewController {
-	var turnSheduler: TurnScheduler!
-	
+	var turnScheduler: TurnScheduler!
+	@IBOutlet weak var label: UILabel!
+	var colors: [UIColor] = [UIColor.red, UIColor.green, UIColor.blue]
+	var colorName: [String] = ["red", "green", "blue"]
+
 	override func viewDidLoad() {
         super.viewDidLoad()
-		turnSheduler = TurnScheduler(numberOfPlayers: 4)
-		turnSheduler.turnChangeSignal.observeValues { count in
-			print(count)
-		}
-    }
+		
+		let gridView = GameGrid.gameGridView()
+		gridView.frame = CGRect(x: 0, y: 100, width: 400, height: 200)
+		self.view.addSubview(gridView)
+		gridView.configure(with: Grid(row: 5, column: 5))
+		gridView.start()
+//		let (signal1, observer1) = Signal<Int, NoError>.pipe()
+//		
+//		let (signal2, observer2) = Signal<Int, NoError>.pipe()
+//		
+//		let (signal3, observer3) = Signal<Int, NoError>.pipe()
+//
+//		let _ = Signal.zip([signal1, signal2, signal3]).observeValues { arr in
+//			arr.forEach({ index in
+//				print(index)
+//			})
+//		}
+//		observer1.send(value: 11)
+//		observer2.send(value: 21)
+//		observer3.send(value: 31)
+//
+	turnScheduler = TurnScheduler(numberOfPlayers: colors.count)
+		
+		let observer: Observer<Int, NoError> = Observer(value: { [weak self] count in
+			self?.label.text = "Current Color is \((gridView.colors[count - 1]))"
+			self?.label.backgroundColor = self?.colors[count - 1]
+		})
+		turnScheduler.turnChangeSignal.observe(observer)
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+		
+	}
 }
 
 extension SignalViewController: Routable {
@@ -33,50 +57,5 @@ extension SignalViewController: Routable {
 	}
 	static var storyboardName: String {
 		return "Main"
-	}
-}
-
-class TurnScheduler {
-	public private(set) var turnChangeSignal: Signal<Int, NoError>
-	private var counter: ReactiveCounter
-
-	init(numberOfPlayers: Int) {
-		counter = ReactiveCounter(timeInterval: 1.5)
-		turnChangeSignal = counter.counterSignal.map({ count in
-			return ((count) % numberOfPlayers) + 1
-		})
-	}
-	
-	deinit {
-		counter.stopTimer()
-	}
-}
-
-class ReactiveCounter {
-	private var timer: Timer
-	public private(set) var counterSignal: Signal<Int, NoError>
-	
-	init(timeInterval: TimeInterval) {
-		var signals: [Signal<Void, NoError>] = []
-		let (timerSignal, timerObserver) = Signal<Void, NoError>.pipe()
-		
-		timer = Timer.scheduledTimer(withTimeInterval: timeInterval, repeats: true, block: { timer in
-			timerObserver.send(value: ())
-			signals.append(timerSignal)
-		})
-		
-		timer.fire()
-		
-		counterSignal = Signal.merge(signals).scan(-1) { (count, _)  in
-			return count + 1
-		}
-	}
-	
-	func stopTimer() {
-		timer.invalidate()
-	}
-	
-	deinit {
-		timer.invalidate()
 	}
 }
