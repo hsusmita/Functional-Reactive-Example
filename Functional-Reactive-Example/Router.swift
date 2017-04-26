@@ -26,6 +26,8 @@ class Router {
 				return SignalViewController.storyboardInstance
 			case .combine:
 				return CombineOperatorViewController.storyboardInstance
+			case .transform:
+				return TransformOperatorViewController.storyboardInstance
 			default:
 				return BindingViewController.storyboardInstance
 			}
