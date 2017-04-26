@@ -174,17 +174,13 @@ extension GameGrid: UICollectionViewDelegate {
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
-		guard let indexPath = gridCollectionView.indexPathForItem(at: scrollView.contentOffset) else {
-			return
-		}
-		if indexPath.row == currentRowCount {
-			let start = (self.currentRowCount * self.grid.column)
-			let end = (self.currentRowCount + 1) * self.grid.column - 1
-			let indexPaths = (start...end).map({IndexPath(item: $0, section: 0)})
-			self.currentRowCount += 1
-			gridCollectionView.performBatchUpdates({
-				self.gridCollectionView.insertItems(at: indexPaths)
-			}, completion: nil)
+		let gridHeight = self.gridCollectionView.frame.height
+		let contentSizeHeight = self.gridCollectionView.contentSize.height
+		
+		//add rows when collectionviews reaches to end
+		if contentSizeHeight == gridHeight + scrollView.contentOffset.y {
+			self.currentRowCount += 5
+			self.gridCollectionView.reloadData()
 		}
 	}
 }
