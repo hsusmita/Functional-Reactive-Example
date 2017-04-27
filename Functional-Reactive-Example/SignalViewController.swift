@@ -24,12 +24,60 @@ class SignalViewController: UIViewController {
 		gridView.configure(with: Grid(row: 5, column: 5))
 		gridView.start()
 		
-		turnScheduler = TurnScheduler(numberOfPlayers: colors.count)
+		turnScheduler = TurnScheduler(numberOfTurns: colors.count)
 		let observer: Observer<Int, NoError> = Observer(value: { [unowned self] count in
 			self.label.text = "Current Color is \((self.gridView.colors[count - 1]))"
 			self.label.backgroundColor = self.colors[count - 1]
 		})
 		turnScheduler.turnChangeSignal.observe(observer)
+		turnScheduler.turnChangeSignal.reduce(0) { (sum, count) in
+			return sum + 1
+		}.observeValues { value in
+			print(value)
+		}
+		
+//		signalProducerFromSignal()
+		createSignalProducer()
+	}
+	
+	func createSignalProducer() {
+		let sp: SignalProducer<Int, NoError> = SignalProducer<Int, NoError>(turnScheduler.turnChangeSignal)
+		let observer1: Observer<Int, NoError> = Observer<Int, NoError>.init(value: {value in
+				print("value from producer = \(value)")
+		})
+		sp.start(observer1)
+		
+		let signalProducer1: SignalProducer<Int, NoError> = SignalProducer<Int, NoError>{ () -> Int in
+			let randomNum:UInt32 = arc4random_uniform(100) // range is 0 to 99
+			return Int(randomNum)
+		}
+		
+		signalProducer1.start( { value in
+			print(value)
+		})
+	}
+	
+	func signalProducerFromSignal() {
+		let (signal, observer) = Signal<Int, NoError>.pipe()
+		let producer = SignalProducer<Int, NoError>(signal)
+		let subscriber1 = Observer<Int, NoError>(value: { print("Subscriber 1 received \($0)") } )
+		let subscriber2 = Observer<Int, NoError>(value: { print("Subscriber 2 received \($0)") } )
+		
+		
+		print("Subscriber 1 starts the producer")
+		producer.start(subscriber1)
+		
+		print("Send value `10` on the signal")
+		// subscriber1 will receive the value
+		observer.send(value: 10)
+		
+		print("Subscriber 2 starts the producer")
+		// Notice how nothing happens at this moment, i.e. subscriber2 does not receive the previously sent value
+		producer.start(subscriber2)
+		
+		print("Send value `20` on the signal")
+		// Notice that now, subscriber1 and subscriber2 will receive the value
+		observer.send(value: 20)
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {

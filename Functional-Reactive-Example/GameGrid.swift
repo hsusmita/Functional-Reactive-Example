@@ -21,10 +21,6 @@ struct Grid {
 		let width = (frame.width - interCellSpacing * CGFloat(column - 1)) / CGFloat(column)
 		return CGSize(width: width, height: width)
 	}
-	
-//	func totalSize(for frame: CGRect) -> CGSize {
-//		return CGSize
-//	}
 }
 
 class GameGrid: UIView {
@@ -41,6 +37,7 @@ class GameGrid: UIView {
 	private var counter: ReactiveCounter!
 	private var animationCounter: ReactiveCounter!
 	var currentRowCount = 0
+	var gameBoard: [Int: [Int]] = [:]
 	
 	func configure(with grid: Grid) {
 		self.grid = grid
@@ -50,7 +47,20 @@ class GameGrid: UIView {
 		gridCollectionView.delegate = self
 		gridCollectionView.reloadData()
 		currentRowCount = grid.row
+		
+		for i in 0..<grid.row {
+			var colorIndexes: [Int] = []
+			if i == 0 {
+				colorIndexes = (0..<colors.count).map({ $0 })
+			} else {
+				colorIndexes = gameBoard[i - 1]!
+			}
+			colorIndexes.shuffle()
+			gameBoard[i] = colorIndexes
+		}
 	}
+	
+	
 	
 	var offsetPoint: MutableProperty<CGPoint> = MutableProperty<CGPoint>(CGPoint.zero)
 	
@@ -58,11 +68,11 @@ class GameGrid: UIView {
 		counter = ReactiveCounter(timeInterval: 2.0)
 		animationCounter = ReactiveCounter(timeInterval: 0.05)
 		
-		let observer: Observer<Int, NoError> = Observer(value: { value in
-			
-		})
-		
- 		counter.counterSignal.observe(observer)
+		animationCounter.counterSignal.observeValues { counter in
+			if counter > 50 {
+				self.animationCounter.stopTimer()
+			}
+		}
 		offsetPoint <~ animationCounter.counterSignal.map({ [unowned self] count in
 			let totalIteration = Int(self.gridCollectionView.contentSize.height / 5.0)
 			let originY = CGFloat(count) * 5.0
@@ -70,7 +80,6 @@ class GameGrid: UIView {
 		})
 		
 		offsetPoint.signal.observeValues() { [weak self] point in
-			print(point)
 			self?.gridCollectionView.contentOffset = point
 		}
 		
@@ -153,7 +162,8 @@ extension GameGrid: UICollectionViewDataSource {
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "GridCollectionViewCell", for: indexPath) as! GridCollectionViewCell
 		cell.label.text = "\(indexPath.row)"
-		cell.backgroundColor = colors[indexPath.item % grid.row]
+		let indexes = gameBoard[indexPath.item / grid.row]
+		cell.backgroundColor = colors[(indexes?[indexPath.item % grid.column])!]
 		return cell
 	}
 }
@@ -179,8 +189,34 @@ extension GameGrid: UICollectionViewDelegate {
 		
 		//add rows when collectionviews reaches to end
 		if contentSizeHeight == gridHeight + scrollView.contentOffset.y {
+			for i in self.currentRowCount..<self.currentRowCount+5{
+				var colorIndexes: [Int] = []
+				if i == 0 {
+					colorIndexes = (0..<colors.count).map({ $0 })
+				} else {
+					colorIndexes = gameBoard[i - 1]!
+				}
+				colorIndexes.shuffle()
+				gameBoard[i] = colorIndexes
+			}
 			self.currentRowCount += 5
+
 			self.gridCollectionView.reloadData()
+		}
+	}
+}
+
+extension MutableCollection where Index == Int {
+	/// Shuffle the elements of `self` in-place.
+	mutating func shuffle() {
+		// empty and single-element collections don't shuffle
+		if count < 2 { return }
+		
+		for i in startIndex ..< endIndex - 1 {
+			let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+			if i != j {
+				swap(&self[i], &self[j])
+			}
 		}
 	}
 }
