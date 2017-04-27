@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FBB7D9A1EB1FC8200D91E32 /* ValidatorAndActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */; };
 		780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047EB1EA74102003AF690 /* AppDelegate.swift */; };
 		780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047ED1EA74102003AF690 /* BindingViewController.swift */; };
 		780047F11EA74102003AF690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780047EF1EA74102003AF690 /* Main.storyboard */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorAndActionViewController.swift; sourceTree = "<group>"; };
 		780047E81EA74102003AF690 /* Functional-Reactive-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Functional-Reactive-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		780047EB1EA74102003AF690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		780047ED1EA74102003AF690 /* BindingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2FBB7D981EB1FC3300D91E32 /* ValidatorAndActionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */,
+			);
+			path = ValidatorAndActionViewController;
+			sourceTree = "<group>";
+		};
 		780047DF1EA74101003AF690 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		780047EA1EA74102003AF690 /* Functional-Reactive-Example */ = {
 			isa = PBXGroup;
 			children = (
+				2FBB7D981EB1FC3300D91E32 /* ValidatorAndActionViewController */,
 				7800481E1EA89E46003AF690 /* Binding */,
 				780048271EAA121A003AF690 /* Signal */,
 				78BEA6B91EB088D500E31F56 /* Combine */,
@@ -428,6 +439,7 @@
 				780048261EAA120E003AF690 /* SignalViewController.swift in Sources */,
 				78BEA6C41EB098F000E31F56 /* ItemSelector.swift in Sources */,
 				78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */,
+				2FBB7D9A1EB1FC8200D91E32 /* ValidatorAndActionViewController.swift in Sources */,
 				78BEA6C11EB098D000E31F56 /* ItemTableViewCell.swift in Sources */,
 				78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */,
 				78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */,
