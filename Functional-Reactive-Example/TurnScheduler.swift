@@ -15,7 +15,7 @@ class TurnScheduler {
 	private var counter: ReactiveCounter
 	
 	init(numberOfTurns: Int) {
-		counter = ReactiveCounter(timeInterval: 2.0)
+		counter = ReactiveCounter(timeInterval: 5.0)
 		turnChangeSignal = counter.counterSignal.map { count in
 			return ((count) % numberOfTurns) + 1
 		}

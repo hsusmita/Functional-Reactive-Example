@@ -26,6 +26,7 @@ struct Grid {
 class GameGrid: UIView {
 
 	@IBOutlet fileprivate weak var gridCollectionView: UICollectionView!
+	let (selectedRowSignal, selectedRowObserver) = Signal<Int, NoError>.pipe()
 	
 	fileprivate var grid: Grid = Grid(row: 1, column: 1)
 	
@@ -33,6 +34,7 @@ class GameGrid: UIView {
 		return Bundle.main.loadNibNamed("GameGrid", owner: nil, options: nil)?.first! as! GameGrid
 	}
 	var colors: [UIColor] = [.red, .blue, .green, .yellow, .gray]
+	var colorsName = ["Red", "Blue", "Green", "Yellow", "Gray"]
 	
 	private var counter: ReactiveCounter!
 	private var animationCounter: ReactiveCounter!
@@ -69,9 +71,9 @@ class GameGrid: UIView {
 		animationCounter = ReactiveCounter(timeInterval: 0.05)
 		
 		animationCounter.counterSignal.observeValues { counter in
-			if counter > 50 {
-				self.animationCounter.stopTimer()
-			}
+//			if counter > 50 {
+//				self.animationCounter.stopTimer()
+//			}
 		}
 		offsetPoint <~ animationCounter.counterSignal.map({ [unowned self] count in
 			let totalIteration = Int(self.gridCollectionView.contentSize.height / 5.0)
@@ -180,7 +182,10 @@ extension GameGrid: UICollectionViewDelegateFlowLayout {
 
 extension GameGrid: UICollectionViewDelegate {
 	func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-		print("tapped on \(indexPath.row)")
+		let cell = collectionView.cellForItem(at: indexPath)
+		if let color = cell?.backgroundColor, let colorIndex = self.colors.index(of: color) {
+			self.selectedRowObserver.send(value: colorIndex + 1)
+		}
 	}
 	
 	func scrollViewDidScroll(_ scrollView: UIScrollView) {
