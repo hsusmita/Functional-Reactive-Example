@@ -7,30 +7,44 @@
 //
 
 import UIKit
+import ReactiveCocoa
+import ReactiveSwift
+import Result
+
+enum FormError: Error {
+	case invalidEmail
+	case invalidPassword
+}
 
 class CombineOperatorViewController: UIViewController {
 
+	@IBOutlet weak var texttFieldEmail: UITextField!
+	@IBOutlet weak var textFieldPassword: UITextField!
+	@IBOutlet weak var buttonSignIn: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		combineLatest()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+	//MARK: - Combine Latest
+	let emailString: MutableProperty<String> = MutableProperty<String>("")
+	let passwordString: MutableProperty<String> = MutableProperty<String>("")
+	let isValidForm: MutableProperty<Bool> = MutableProperty<Bool>(false)
 
-    /*
-    // MARK: - Navigation
+	func combineLatest() {
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+		emailString <~ texttFieldEmail.reactive.continuousTextValues.skipNil()
+		passwordString <~ textFieldPassword.reactive.continuousTextValues.skipNil()
+
+		isValidForm <~ emailString.combineLatest(with: passwordString).map{
+			email, password in
+
+			return CombineOperatorViewController.isValidEmail(testStr: email) && CombineOperatorViewController.isValidPassword(testStr: password)
+		}
+
+		buttonSignIn.reactive.isEnabled <~ isValidForm
+	}
 }
 
 extension CombineOperatorViewController: Routable {
@@ -40,5 +54,20 @@ extension CombineOperatorViewController: Routable {
 	
 	static var storyboardName: String {
 		return "Main"
+	}
+}
+
+//MARK: - Util Methods
+extension CombineOperatorViewController {
+	static func isValidEmail(testStr:String) -> Bool {
+		print(testStr)
+		let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+		let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+		return emailTest.evaluate(with: testStr)
+	}
+
+	static func isValidPassword(testStr: String) -> Bool {
+		print(testStr)
+		return testStr.characters.count > 4
 	}
 }

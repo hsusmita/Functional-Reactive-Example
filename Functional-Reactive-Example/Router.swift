@@ -17,6 +17,7 @@ class Router {
 		case combine
 		case flatten
 		case binding
+		case validatorPropertyAction
 		
 		var viewController: UIViewController? {
 			switch self {
@@ -28,6 +29,8 @@ class Router {
 				return CombineOperatorViewController.storyboardInstance
 			case .transform:
 				return TransformOperatorViewController.storyboardInstance
+			case .validatorPropertyAction:
+				return ValidatorAndActionViewController.storyboardInstance
 			default:
 				return BindingViewController.storyboardInstance
 			}
@@ -45,6 +48,8 @@ class Router {
 				return "Combine Operators"
 			case .flatten:
 				return "Flatten Operators"
+			case .validatorPropertyAction:
+				return "Validator Property/Action"
 			}
 		}
 	}
