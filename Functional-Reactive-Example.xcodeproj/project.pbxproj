@@ -20,10 +20,12 @@
 		780048201EA89ED8003AF690 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481F1EA89ED8003AF690 /* Routable.swift */; };
 		780048221EA8A0D9003AF690 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048211EA8A0D9003AF690 /* Router.swift */; };
 		780048261EAA120E003AF690 /* SignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048251EAA120E003AF690 /* SignalViewController.swift */; };
+		78783C1D1EB351F50047963E /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C1C1EB351F50047963E /* Grid.swift */; };
+		78783C211EB35FC80047963E /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C201EB35FC80047963E /* GameGridView.swift */; };
+		78783C341EB763390047963E /* SignalProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C331EB763390047963E /* SignalProducerViewController.swift */; };
 		78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */; };
 		78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */; };
-		78BEA6B01EAE07ED00E31F56 /* GameGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AF1EAE07ED00E31F56 /* GameGrid.swift */; };
-		78BEA6B21EAE0ADA00E31F56 /* GameGrid.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */; };
+		78BEA6B21EAE0ADA00E31F56 /* GameGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */; };
 		78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */; };
 		78BEA6B61EAF2D0F00E31F56 /* GridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */; };
 		78BEA6B81EB088CF00E31F56 /* CombineOperatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6B71EB088CF00E31F56 /* CombineOperatorViewController.swift */; };
@@ -71,10 +73,12 @@
 		7800481F1EA89ED8003AF690 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		780048211EA8A0D9003AF690 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		780048251EAA120E003AF690 /* SignalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalViewController.swift; sourceTree = "<group>"; };
+		78783C1C1EB351F50047963E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		78783C201EB35FC80047963E /* GameGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
+		78783C331EB763390047963E /* SignalProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerViewController.swift; sourceTree = "<group>"; };
 		78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCounter.swift; sourceTree = "<group>"; };
 		78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnScheduler.swift; sourceTree = "<group>"; };
-		78BEA6AF1EAE07ED00E31F56 /* GameGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGrid.swift; sourceTree = "<group>"; };
-		78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameGrid.xib; sourceTree = "<group>"; };
+		78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameGridView.xib; sourceTree = "<group>"; };
 		78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCollectionViewCell.xib; sourceTree = "<group>"; };
 		78BEA6B71EB088CF00E31F56 /* CombineOperatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombineOperatorViewController.swift; path = Combine/CombineOperatorViewController.swift; sourceTree = "<group>"; };
@@ -169,10 +173,11 @@
 				780047F21EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld */,
 				7800481F1EA89ED8003AF690 /* Routable.swift */,
 				780048211EA8A0D9003AF690 /* Router.swift */,
-				78BEA6AF1EAE07ED00E31F56 /* GameGrid.swift */,
-				78BEA6B11EAE0ADA00E31F56 /* GameGrid.xib */,
+				78783C201EB35FC80047963E /* GameGridView.swift */,
+				78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */,
 				78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */,
 				78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */,
+				78783C1C1EB351F50047963E /* Grid.swift */,
 			);
 			path = "Functional-Reactive-Example";
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				780048251EAA120E003AF690 /* SignalViewController.swift */,
 				78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */,
 				78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */,
+				78783C331EB763390047963E /* SignalProducerViewController.swift */,
 			);
 			name = Signal;
 			sourceTree = "<group>";
@@ -355,7 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				780047F91EA74102003AF690 /* LaunchScreen.storyboard in Resources */,
-				78BEA6B21EAE0ADA00E31F56 /* GameGrid.xib in Resources */,
+				78BEA6B21EAE0ADA00E31F56 /* GameGridView.xib in Resources */,
 				780047F61EA74102003AF690 /* Assets.xcassets in Resources */,
 				78BEA6B61EAF2D0F00E31F56 /* GridCollectionViewCell.xib in Resources */,
 				78BEA6C21EB098D000E31F56 /* ItemTableViewCell.xib in Resources */,
@@ -434,6 +440,7 @@
 			files = (
 				780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */,
 				780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */,
+				78783C341EB763390047963E /* SignalProducerViewController.swift in Sources */,
 				78BEA6BC1EB093F200E31F56 /* TransformOperatorViewController.swift in Sources */,
 				78BEA6B81EB088CF00E31F56 /* CombineOperatorViewController.swift in Sources */,
 				780048261EAA120E003AF690 /* SignalViewController.swift in Sources */,
@@ -442,10 +449,11 @@
 				2FBB7D9A1EB1FC8200D91E32 /* ValidatorAndActionViewController.swift in Sources */,
 				78BEA6C11EB098D000E31F56 /* ItemTableViewCell.swift in Sources */,
 				78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */,
+				78783C1D1EB351F50047963E /* Grid.swift in Sources */,
 				78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */,
 				780047F41EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld in Sources */,
+				78783C211EB35FC80047963E /* GameGridView.swift in Sources */,
 				7800481D1EA89B5C003AF690 /* MenuViewController.swift in Sources */,
-				78BEA6B01EAE07ED00E31F56 /* GameGrid.swift in Sources */,
 				780048221EA8A0D9003AF690 /* Router.swift in Sources */,
 				780048201EA89ED8003AF690 /* Routable.swift in Sources */,
 			);

@@ -14,10 +14,14 @@ class TurnScheduler {
 	public private(set) var turnChangeSignal: Signal<Int, NoError>
 	private var counter: ReactiveCounter
 	
-	init(numberOfTurns: Int) {
-		counter = ReactiveCounter(timeInterval: 5.0)
-		turnChangeSignal = counter.counterSignal.map { count in
-			return ((count) % numberOfTurns) + 1
+	init(turnsForSlot: Int, numberOfSlots: Int) {
+		counter = ReactiveCounter(timeInterval: 2.0)
+		turnChangeSignal = counter.counterSignal
+			.take(while: { count in
+			return count < turnsForSlot * numberOfSlots
+		})
+			.map { count in
+			return ((count) % turnsForSlot) + 1
 		}
 	}
 	
