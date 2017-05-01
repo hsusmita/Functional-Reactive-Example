@@ -72,12 +72,6 @@ class SignalViewController: UIViewController {
 			
 			self.turnScheduler.turnChangeSignal.observe(observer)
 			self.currentColor <~ self.turnScheduler.turnChangeSignal
-			self.label.reactive.text <~ self.turnScheduler.turnChangeSignal.map { [weak self] count in
-				guard let weakSelf = self else {
-					return ""
-				}
-				return "Tap grid of \(weakSelf.colorsName[count - 1]) Color"
-			}
 		}
 	}
 	
