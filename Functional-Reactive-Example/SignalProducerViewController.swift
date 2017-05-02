@@ -13,34 +13,29 @@ import Result
 
 class SignalProducerViewController: UIViewController {
 
+	var turnScheduler: TurnScheduler?
+	
+	@IBOutlet weak var turnLabel: UILabel!
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+		createSignalProducer()
+		singleValueSignalProducer()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-	
+	// init(_ signal: S)
+	// This example shows how to create signal producer from a signal
+
 	func createSignalProducer() {
-		let turnScheduler = TurnScheduler(turnsForSlot: 5, numberOfSlots: 1)
-
-		let sp: SignalProducer<Int, NoError> = SignalProducer<Int, NoError>(turnScheduler.turnChangeSignal)
-		let observer1: Observer<Int, NoError> = Observer<Int, NoError>.init(value: {value in
-			print("value from producer = \(value)")
-		})
-		sp.start(observer1)
-		
-		let signalProducer1: SignalProducer<Int, NoError> = SignalProducer<Int, NoError>{ () -> Int in
-			let randomNum:UInt32 = arc4random_uniform(100) // range is 0 to 99
-			return Int(randomNum)
+		turnScheduler = TurnScheduler(turnsForSlot: 5, numberOfSlots: 1)
+		guard let turnScheduler = turnScheduler else {
+			return
 		}
-		
-		signalProducer1.start( { value in
-			print(value)
+		let firstSignalProducer: SignalProducer<Int, NoError> = SignalProducer<Int, NoError>(turnScheduler.turnChangeSignal)
+		let observer: Observer<Int, NoError> = Observer<Int, NoError>.init(value: { [weak self] value in
+			self?.turnLabel.text = String(value)
 		})
+		firstSignalProducer.start(observer)
 	}
 	
 	func signalProducerFromSignal() {
@@ -64,6 +59,55 @@ class SignalProducerViewController: UIViewController {
 		print("Send value `20` on the signal")
 		// Notice that now, subscriber1 and subscriber2 will receive the value
 		observer.send(value: 20)
+		
+		//		let signalProducer1: SignalProducer<Int, NoError> = SignalProducer<Int, NoError>{ () -> Int in
+		//			let randomNum:UInt32 = arc4random_uniform(100) // range is 0 to 99
+		//			return Int(randomNum)
+		//		}
+		//
+		//		signalProducer1.start( { value in
+		//			print(value)
+		//		})
+	}
+	
+	struct Error: Swift.Error {
+
+	}
+	
+	func singleValueSignalProducer() {
+		let signalProducer: SignalProducer<Int, NoError> = SignalProducer(value: 5)
+		let observer: Observer<Int, NoError> = Observer(value: { value in
+			print("Emitted value = \(value)")
+		}, completed: {
+			print("completed")
+		})
+		signalProducer.start(observer)
+		
+		let sp: SignalProducer<Int, NoError> = SignalProducer([1 , 2 , 3, 4, 5])
+		sp.start(observer)
+		
+		let resultObserver: Observer<Int, Error> = Observer(value: { (value) in
+			print("Emitted value = \(value)")
+		}, failed: { (error) in
+			print("Failed with error = \(error)")
+		}, completed: {
+			print("Completed")
+		})
+		
+		let sp2: SignalProducer<Int, Error> = SignalProducer(error: Error())
+		sp2.start(resultObserver)
+	}
+	
+	func resultSignalProducer() {
+		let resultError = Result<Int, Error>(error: Error())
+		let errorProducer: SignalProducer<Int, Error> = SignalProducer(result: resultError)
+		
+		errorProducer.start(resultObserver)
+		
+		let resultValue = Result<Int, Error>(value: 10)
+		let valueProducer: SignalProducer<Int, Error> = SignalProducer(result: resultValue)
+		
+		valueProducer.start(resultObserver)
 	}
 
     /*
@@ -76,4 +120,13 @@ class SignalProducerViewController: UIViewController {
     }
     */
 
+}
+
+extension SignalProducerViewController: Routable {
+	static var storyboardId: String {
+		return "SignalProducerViewController"
+	}
+	static var storyboardName: String {
+		return "Main"
+	}
 }

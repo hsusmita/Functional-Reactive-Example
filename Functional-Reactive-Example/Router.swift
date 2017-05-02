@@ -13,24 +13,30 @@ class Router {
 	
 	enum Destination: Int {
 		case signal
+		case signalProducer
+		case action
+		case binding
 		case transform
+		case aggregate
 		case combine
 		case flatten
-		case binding
-		case validatorPropertyAction
+		case limit
+		case logical
 		
 		var viewController: UIViewController? {
 			switch self {
-			case .binding:
-				return BindingViewController.storyboardInstance
 			case .signal:
 				return SignalViewController.storyboardInstance
-			case .combine:
-				return CombineOperatorViewController.storyboardInstance
+			case .signalProducer:
+				return SignalProducerViewController.storyboardInstance
+			case .action:
+				return ValidatorAndActionViewController.storyboardInstance
+			case .binding:
+				return BindingViewController.storyboardInstance
 			case .transform:
 				return TransformOperatorViewController.storyboardInstance
-			case .validatorPropertyAction:
-				return ValidatorAndActionViewController.storyboardInstance
+			case .combine:
+				return CombineOperatorViewController.storyboardInstance
 			default:
 				return BindingViewController.storyboardInstance
 			}
@@ -39,17 +45,25 @@ class Router {
 		var title: String {
 			switch self {
 			case .signal:
-				return "Create Signal"
+				return "Signal"
+			case .signalProducer:
+				return "Signal Producer"
 			case .binding:
 				return "Binding"
+			case .action:
+				return "Action"
 			case .transform:
 				return "Transform Operators"
+			case .aggregate:
+				return "Aggregate Operators"
 			case .combine:
 				return "Combine Operators"
 			case .flatten:
 				return "Flatten Operators"
-			case .validatorPropertyAction:
-				return "Validator Property/Action"
+			case .limit:
+				return "Limiting Operators"
+			case .logical:
+				return "Logical Operators"
 			}
 		}
 	}

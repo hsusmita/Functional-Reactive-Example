@@ -23,6 +23,10 @@
 		78783C1D1EB351F50047963E /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C1C1EB351F50047963E /* Grid.swift */; };
 		78783C211EB35FC80047963E /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C201EB35FC80047963E /* GameGridView.swift */; };
 		78783C341EB763390047963E /* SignalProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C331EB763390047963E /* SignalProducerViewController.swift */; };
+		78783C451EB88DC30047963E /* FunctionalPlayground.h in Headers */ = {isa = PBXBuildFile; fileRef = 78783C431EB88DC30047963E /* FunctionalPlayground.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		78783C481EB88DC30047963E /* FunctionalPlayground.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78783C411EB88DC30047963E /* FunctionalPlayground.framework */; };
+		78783C491EB88DC30047963E /* FunctionalPlayground.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 78783C411EB88DC30047963E /* FunctionalPlayground.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		78783C4F1EB88DE60047963E /* Example.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C4E1EB88DE60047963E /* Example.swift */; };
 		78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */; };
 		78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */; };
 		78BEA6B21EAE0ADA00E31F56 /* GameGridView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */; };
@@ -51,7 +55,28 @@
 			remoteGlobalIDString = 780047E71EA74102003AF690;
 			remoteInfo = "Functional-Reactive-Example";
 		};
+		78783C461EB88DC30047963E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 780047E01EA74101003AF690 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 78783C401EB88DC30047963E;
+			remoteInfo = FunctionalPlayground;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		78783C4D1EB88DC30047963E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				78783C491EB88DC30047963E /* FunctionalPlayground.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorAndActionViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +101,11 @@
 		78783C1C1EB351F50047963E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		78783C201EB35FC80047963E /* GameGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
 		78783C331EB763390047963E /* SignalProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerViewController.swift; sourceTree = "<group>"; };
+		78783C411EB88DC30047963E /* FunctionalPlayground.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FunctionalPlayground.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78783C431EB88DC30047963E /* FunctionalPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionalPlayground.h; sourceTree = "<group>"; };
+		78783C441EB88DC30047963E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78783C4E1EB88DE60047963E /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
+		7879AE401EB88E4000A5AECC /* Functional-Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Functional-Playground.playground"; sourceTree = "<group>"; };
 		78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCounter.swift; sourceTree = "<group>"; };
 		78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnScheduler.swift; sourceTree = "<group>"; };
 		78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameGridView.xib; sourceTree = "<group>"; };
@@ -96,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78783C481EB88DC30047963E /* FunctionalPlayground.framework in Frameworks */,
 				79B22249D2D08EEEF57B4C0A /* Pods_Functional_Reactive_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +145,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78783C3D1EB88DC30047963E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -126,20 +164,23 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		2FBB7D981EB1FC3300D91E32 /* ValidatorAndActionViewController */ = {
+		2FBB7D981EB1FC3300D91E32 /* Action */ = {
 			isa = PBXGroup;
 			children = (
 				2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */,
 			);
+			name = Action;
 			path = ValidatorAndActionViewController;
 			sourceTree = "<group>";
 		};
 		780047DF1EA74101003AF690 = {
 			isa = PBXGroup;
 			children = (
+				7879AE401EB88E4000A5AECC /* Functional-Playground.playground */,
 				780047EA1EA74102003AF690 /* Functional-Reactive-Example */,
 				780048021EA74102003AF690 /* Functional-Reactive-ExampleTests */,
 				7800480D1EA74102003AF690 /* Functional-Reactive-ExampleUITests */,
+				78783C421EB88DC30047963E /* FunctionalPlayground */,
 				780047E91EA74102003AF690 /* Products */,
 				120DEA48F91C441267B55DE1 /* Pods */,
 				DC6BEDFF542037A827ADBF2E /* Frameworks */,
@@ -152,6 +193,7 @@
 				780047E81EA74102003AF690 /* Functional-Reactive-Example.app */,
 				780047FF1EA74102003AF690 /* Functional-Reactive-ExampleTests.xctest */,
 				7800480A1EA74102003AF690 /* Functional-Reactive-ExampleUITests.xctest */,
+				78783C411EB88DC30047963E /* FunctionalPlayground.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,11 +201,10 @@
 		780047EA1EA74102003AF690 /* Functional-Reactive-Example */ = {
 			isa = PBXGroup;
 			children = (
-				2FBB7D981EB1FC3300D91E32 /* ValidatorAndActionViewController */,
-				7800481E1EA89E46003AF690 /* Binding */,
 				780048271EAA121A003AF690 /* Signal */,
-				78BEA6B91EB088D500E31F56 /* Combine */,
-				78BEA6BA1EB0930300E31F56 /* Transform */,
+				78783C361EB86DD60047963E /* Signal Producer */,
+				2FBB7D981EB1FC3300D91E32 /* Action */,
+				78783C371EB86ED60047963E /* Operators */,
 				780047EB1EA74102003AF690 /* AppDelegate.swift */,
 				7800481C1EA89B5C003AF690 /* MenuViewController.swift */,
 				780047EF1EA74102003AF690 /* Main.storyboard */,
@@ -173,11 +214,7 @@
 				780047F21EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld */,
 				7800481F1EA89ED8003AF690 /* Routable.swift */,
 				780048211EA8A0D9003AF690 /* Router.swift */,
-				78783C201EB35FC80047963E /* GameGridView.swift */,
-				78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */,
-				78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */,
-				78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */,
-				78783C1C1EB351F50047963E /* Grid.swift */,
+				78783C351EB86D5F0047963E /* Game Grid */,
 			);
 			path = "Functional-Reactive-Example";
 			sourceTree = "<group>";
@@ -206,6 +243,7 @@
 				780047ED1EA74102003AF690 /* BindingViewController.swift */,
 			);
 			name = Binding;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		780048271EAA121A003AF690 /* Signal */ = {
@@ -214,9 +252,81 @@
 				780048251EAA120E003AF690 /* SignalViewController.swift */,
 				78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */,
 				78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */,
-				78783C331EB763390047963E /* SignalProducerViewController.swift */,
 			);
 			name = Signal;
+			sourceTree = "<group>";
+		};
+		78783C351EB86D5F0047963E /* Game Grid */ = {
+			isa = PBXGroup;
+			children = (
+				78783C201EB35FC80047963E /* GameGridView.swift */,
+				78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */,
+				78BEA6B31EAE0B4D00E31F56 /* GridCollectionViewCell.swift */,
+				78BEA6B51EAF2D0F00E31F56 /* GridCollectionViewCell.xib */,
+				78783C1C1EB351F50047963E /* Grid.swift */,
+			);
+			name = "Game Grid";
+			sourceTree = "<group>";
+		};
+		78783C361EB86DD60047963E /* Signal Producer */ = {
+			isa = PBXGroup;
+			children = (
+				78783C331EB763390047963E /* SignalProducerViewController.swift */,
+			);
+			name = "Signal Producer";
+			sourceTree = "<group>";
+		};
+		78783C371EB86ED60047963E /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				7800481E1EA89E46003AF690 /* Binding */,
+				78BEA6BA1EB0930300E31F56 /* Transform */,
+				78783C391EB86F7B0047963E /* Aggregate */,
+				78BEA6B91EB088D500E31F56 /* Combine */,
+				78783C381EB86F4B0047963E /* Flatten */,
+				78783C3A1EB86F990047963E /* Limit */,
+				78783C3B1EB86FB40047963E /* Logical */,
+			);
+			name = Operators;
+			path = ValidatorAndActionViewController;
+			sourceTree = "<group>";
+		};
+		78783C381EB86F4B0047963E /* Flatten */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Flatten;
+			sourceTree = "<group>";
+		};
+		78783C391EB86F7B0047963E /* Aggregate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Aggregate;
+			sourceTree = "<group>";
+		};
+		78783C3A1EB86F990047963E /* Limit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Limit;
+			sourceTree = "<group>";
+		};
+		78783C3B1EB86FB40047963E /* Logical */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Logical;
+			sourceTree = "<group>";
+		};
+		78783C421EB88DC30047963E /* FunctionalPlayground */ = {
+			isa = PBXGroup;
+			children = (
+				78783C431EB88DC30047963E /* FunctionalPlayground.h */,
+				78783C441EB88DC30047963E /* Info.plist */,
+				78783C4E1EB88DE60047963E /* Example.swift */,
+			);
+			path = FunctionalPlayground;
 			sourceTree = "<group>";
 		};
 		78BEA6B91EB088D500E31F56 /* Combine */ = {
@@ -225,6 +335,7 @@
 				78BEA6B71EB088CF00E31F56 /* CombineOperatorViewController.swift */,
 			);
 			name = Combine;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		78BEA6BA1EB0930300E31F56 /* Transform */ = {
@@ -236,7 +347,7 @@
 				78BEA6C01EB098D000E31F56 /* ItemTableViewCell.xib */,
 			);
 			name = Transform;
-			path = ..;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		DC6BEDFF542037A827ADBF2E /* Frameworks */ = {
@@ -249,6 +360,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		78783C3E1EB88DC30047963E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78783C451EB88DC30047963E /* FunctionalPlayground.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		780047E71EA74102003AF690 /* Functional-Reactive-Example */ = {
 			isa = PBXNativeTarget;
@@ -260,10 +382,12 @@
 				780047E61EA74102003AF690 /* Resources */,
 				4215654D1683164AF0294C16 /* [CP] Embed Pods Frameworks */,
 				95DAE6BA26249146DB0F5B0C /* [CP] Copy Pods Resources */,
+				78783C4D1EB88DC30047963E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				78783C471EB88DC30047963E /* PBXTargetDependency */,
 			);
 			name = "Functional-Reactive-Example";
 			productName = "Functional-Reactive-Example";
@@ -306,6 +430,24 @@
 			productReference = 7800480A1EA74102003AF690 /* Functional-Reactive-ExampleUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		78783C401EB88DC30047963E /* FunctionalPlayground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78783C4A1EB88DC30047963E /* Build configuration list for PBXNativeTarget "FunctionalPlayground" */;
+			buildPhases = (
+				78783C3C1EB88DC30047963E /* Sources */,
+				78783C3D1EB88DC30047963E /* Frameworks */,
+				78783C3E1EB88DC30047963E /* Headers */,
+				78783C3F1EB88DC30047963E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunctionalPlayground;
+			productName = FunctionalPlayground;
+			productReference = 78783C411EB88DC30047963E /* FunctionalPlayground.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -333,6 +475,12 @@
 						ProvisioningStyle = Automatic;
 						TestTargetID = 780047E71EA74102003AF690;
 					};
+					78783C401EB88DC30047963E = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = HP3Q6K3LF3;
+						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 780047E31EA74102003AF690 /* Build configuration list for PBXProject "Functional-Reactive-Example" */;
@@ -351,6 +499,7 @@
 				780047E71EA74102003AF690 /* Functional-Reactive-Example */,
 				780047FE1EA74102003AF690 /* Functional-Reactive-ExampleTests */,
 				780048091EA74102003AF690 /* Functional-Reactive-ExampleUITests */,
+				78783C401EB88DC30047963E /* FunctionalPlayground */,
 			);
 		};
 /* End PBXProject section */
@@ -377,6 +526,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		780048081EA74102003AF690 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		78783C3F1EB88DC30047963E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,6 +631,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		78783C3C1EB88DC30047963E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78783C4F1EB88DE60047963E /* Example.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -487,6 +651,11 @@
 			isa = PBXTargetDependency;
 			target = 780047E71EA74102003AF690 /* Functional-Reactive-Example */;
 			targetProxy = 7800480B1EA74102003AF690 /* PBXContainerItemProxy */;
+		};
+		78783C471EB88DC30047963E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 78783C401EB88DC30047963E /* FunctionalPlayground */;
+			targetProxy = 78783C461EB88DC30047963E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -605,6 +774,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HP3Q6K3LF3;
@@ -620,6 +790,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = HP3Q6K3LF3;
@@ -689,6 +860,55 @@
 			};
 			name = Release;
 		};
+		78783C4B1EB88DC30047963E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HP3Q6K3LF3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FunctionalPlayground/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsusmita.FunctionalPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		78783C4C1EB88DC30047963E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = HP3Q6K3LF3;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = FunctionalPlayground/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hsusmita.FunctionalPlayground;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -724,6 +944,15 @@
 			buildConfigurations = (
 				7800481A1EA74102003AF690 /* Debug */,
 				7800481B1EA74102003AF690 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		78783C4A1EB88DC30047963E /* Build configuration list for PBXNativeTarget "FunctionalPlayground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				78783C4B1EB88DC30047963E /* Debug */,
+				78783C4C1EB88DC30047963E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

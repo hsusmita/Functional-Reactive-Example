@@ -34,31 +34,12 @@ class SignalViewController: UIViewController {
 		self.view.addSubview(self.gridView)
 		self.gridView.configure(colors: self.colors)
 		
-		scoreLabel.reactive.text <~	gridView.selectedRowSignal.filter { value in
-			return value == self.currentColor.value
-		}
-		.scan(0) { (sum, value) in
-			return sum + 1
-		}
-		.map { total in
-			return "Total hit count = \(total)"
-		}
-		resultLabel.reactive.text <~ gridView.selectedRowSignal
-			.reduce(0) { (sum, value) in
-				if value == self.currentColor.value {
-					return sum + 1
-				} else {
-					return sum
-				}
-			}.map { total in
-				return (total > 10) ? "Well done" : "Better luck next time"
-			}
-		
-		self.turnScheduler = TurnScheduler(turnsForSlot: self.colors.count, numberOfSlots: 1)
 		startButton.reactive.controlEvents(.touchUpInside).observeValues { [unowned self] button in
 			self.gridView.start()
 			self.startButton.isEnabled = false
 			self.turnScheduler = TurnScheduler(turnsForSlot: self.colors.count, numberOfSlots: 1)
+			
+			//Observe signal and perform side effects
 			let observer: Observer<Int, NoError> = Observer(value: { [unowned self] count in
 				self.label.text = "Tap grid of \(self.colorsName[count - 1]) Color"
 				self.label.backgroundColor = self.colors[count - 1]
@@ -72,6 +53,29 @@ class SignalViewController: UIViewController {
 			
 			self.turnScheduler.turnChangeSignal.observe(observer)
 			self.currentColor <~ self.turnScheduler.turnChangeSignal
+		}
+		
+		//Aggregate signal values
+		scoreLabel.reactive.text <~	gridView.selectedRowSignal.filter { value in
+			return value == self.currentColor.value
+			}
+			.scan(0) { (sum, value) in
+				return sum + 1
+			}
+			.map { total in
+				return "Total hit count = \(total)"
+		}
+		
+		resultLabel.reactive.text <~ gridView.selectedRowSignal
+			.reduce(0) { (sum, value) in
+				if value == self.currentColor.value {
+					return sum + 1
+				} else {
+					return sum
+				}
+			}
+			.map { total in
+				return (total > 10) ? "Well done" : "Better luck next time"
 		}
 	}
 	

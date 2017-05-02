@@ -11,7 +11,7 @@ import UIKit
 class MenuViewController: UIViewController {
 
 	@IBOutlet private weak var tableView: UITableView!
-	fileprivate var menuArray: [Router.Destination] = [.signal, .binding, .transform, .combine, .flatten, .validatorPropertyAction]
+	fileprivate var menuArray: [Router.Destination] = [.signal, .signalProducer, .action, .binding, .transform, .combine, .flatten]
 	fileprivate var router: Router?
 	
     override func viewDidLoad() {
