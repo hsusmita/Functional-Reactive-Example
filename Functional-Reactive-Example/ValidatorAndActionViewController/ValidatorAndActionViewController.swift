@@ -97,7 +97,7 @@ class ValidatorAndActionViewController: UIViewController {
 
 		//Action
 		loginAction = Action(enabledIf: isFormValid_ValidatingProperty, viewModel.loginWithEmail)
-
+		
 		super.init(coder: aDecoder)
 	}
 

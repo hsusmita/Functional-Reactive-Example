@@ -77,6 +77,17 @@ class SignalViewController: UIViewController {
 			.map { total in
 				return (total > 10) ? "Well done" : "Better luck next time"
 		}
+		
+		gridView.selectedRowSignal.collect().observeValues { values in
+			print(values)
+		}
+		
+		gridView.selectedRowSignal.collect { (values) -> Bool in
+			return values.count == 3
+		}.observeValues { values in
+			print(values)
+		}
+
 	}
 	
 	override func viewDidDisappear(_ animated: Bool) {

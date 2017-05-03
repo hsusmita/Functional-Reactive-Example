@@ -102,6 +102,10 @@
 		7800481F1EA89ED8003AF690 /* Routable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routable.swift; sourceTree = "<group>"; };
 		780048211EA8A0D9003AF690 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		780048251EAA120E003AF690 /* SignalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalViewController.swift; sourceTree = "<group>"; };
+		783DD5941EB9880E00D1372E /* Signal.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Signal.playground; sourceTree = "<group>"; };
+		783DD5951EB9920B00D1372E /* Game.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Game.playground; sourceTree = "<group>"; };
+		783DD5961EB9BA4D00D1372E /* Action.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Action.playground; sourceTree = "<group>"; };
+		783DD5971EB9DB8900D1372E /* Flatten.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Flatten.playground; sourceTree = "<group>"; };
 		78783C1C1EB351F50047963E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		78783C201EB35FC80047963E /* GameGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
 		78783C331EB763390047963E /* SignalProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +113,8 @@
 		78783C431EB88DC30047963E /* FunctionalPlayground.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FunctionalPlayground.h; sourceTree = "<group>"; };
 		78783C441EB88DC30047963E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78783C4E1EB88DE60047963E /* Example.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Example.swift; sourceTree = "<group>"; };
-		7879AE401EB88E4000A5AECC /* Functional-Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "Functional-Playground.playground"; sourceTree = "<group>"; };
+		7879AE401EB88E4000A5AECC /* SignalProducer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = SignalProducer.playground; sourceTree = "<group>"; };
+		7879AE411EB8AD7000A5AECC /* Demo.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Demo.playground; sourceTree = "<group>"; };
 		78BEA6AB1EADDB4200E31F56 /* ReactiveCounter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReactiveCounter.swift; sourceTree = "<group>"; };
 		78BEA6AD1EADDB5E00E31F56 /* TurnScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TurnScheduler.swift; sourceTree = "<group>"; };
 		78BEA6B11EAE0ADA00E31F56 /* GameGridView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameGridView.xib; sourceTree = "<group>"; };
@@ -189,7 +194,12 @@
 		780047DF1EA74101003AF690 = {
 			isa = PBXGroup;
 			children = (
-				7879AE401EB88E4000A5AECC /* Functional-Playground.playground */,
+				783DD5971EB9DB8900D1372E /* Flatten.playground */,
+				783DD5961EB9BA4D00D1372E /* Action.playground */,
+				783DD5951EB9920B00D1372E /* Game.playground */,
+				783DD5941EB9880E00D1372E /* Signal.playground */,
+				7879AE411EB8AD7000A5AECC /* Demo.playground */,
+				7879AE401EB88E4000A5AECC /* SignalProducer.playground */,
 				780047EA1EA74102003AF690 /* Functional-Reactive-Example */,
 				780048021EA74102003AF690 /* Functional-Reactive-ExampleTests */,
 				7800480D1EA74102003AF690 /* Functional-Reactive-ExampleUITests */,

@@ -99,7 +99,6 @@ class SignalProducerViewController: UIViewController {
 	}
 
 	func resultSignalProducer() {
-
 		let resultObserver: Observer<Int, Error> = Observer(value: { (value) in
 			print("Emitted value = \(value)")
 		}, failed: { (error) in
