@@ -97,8 +97,17 @@ class SignalProducerViewController: UIViewController {
 		let sp2: SignalProducer<Int, Error> = SignalProducer(error: Error())
 		sp2.start(resultObserver)
 	}
-	
+
 	func resultSignalProducer() {
+
+		let resultObserver: Observer<Int, Error> = Observer(value: { (value) in
+			print("Emitted value = \(value)")
+		}, failed: { (error) in
+			print("Failed with error = \(error)")
+		}, completed: {
+			print("Completed")
+		})
+
 		let resultError = Result<Int, Error>(error: Error())
 		let errorProducer: SignalProducer<Int, Error> = SignalProducer(result: resultError)
 		

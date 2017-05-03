@@ -37,6 +37,8 @@ class Router {
 				return TransformOperatorViewController.storyboardInstance
 			case .combine:
 				return CombineOperatorViewController.storyboardInstance
+			case .flatten:
+				return FlattenViewController.storyboardInstance
 			default:
 				return BindingViewController.storyboardInstance
 			}

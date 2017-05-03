@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2FBB7D9A1EB1FC8200D91E32 /* ValidatorAndActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */; };
+		2FBB7D9D1EB9B90A00D91E32 /* FlattenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB7D9C1EB9B90A00D91E32 /* FlattenViewController.swift */; };
+		2FBB7D9F1EB9BBB000D91E32 /* FlattenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBB7D9E1EB9BBB000D91E32 /* FlattenViewModel.swift */; };
 		780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047EB1EA74102003AF690 /* AppDelegate.swift */; };
 		780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780047ED1EA74102003AF690 /* BindingViewController.swift */; };
 		780047F11EA74102003AF690 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 780047EF1EA74102003AF690 /* Main.storyboard */; };
@@ -80,6 +82,8 @@
 
 /* Begin PBXFileReference section */
 		2FBB7D991EB1FC8200D91E32 /* ValidatorAndActionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorAndActionViewController.swift; sourceTree = "<group>"; };
+		2FBB7D9C1EB9B90A00D91E32 /* FlattenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenViewController.swift; sourceTree = "<group>"; };
+		2FBB7D9E1EB9BBB000D91E32 /* FlattenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenViewModel.swift; sourceTree = "<group>"; };
 		780047E81EA74102003AF690 /* Functional-Reactive-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Functional-Reactive-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		780047EB1EA74102003AF690 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		780047ED1EA74102003AF690 /* BindingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindingViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,15 @@
 			path = ValidatorAndActionViewController;
 			sourceTree = "<group>";
 		};
+		2FBB7D9B1EB9B8FD00D91E32 /* Flatten */ = {
+			isa = PBXGroup;
+			children = (
+				2FBB7D9C1EB9B90A00D91E32 /* FlattenViewController.swift */,
+				2FBB7D9E1EB9BBB000D91E32 /* FlattenViewModel.swift */,
+			);
+			path = Flatten;
+			sourceTree = "<group>";
+		};
 		780047DF1EA74101003AF690 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +214,7 @@
 		780047EA1EA74102003AF690 /* Functional-Reactive-Example */ = {
 			isa = PBXGroup;
 			children = (
+				2FBB7D9B1EB9B8FD00D91E32 /* Flatten */,
 				780048271EAA121A003AF690 /* Signal */,
 				78783C361EB86DD60047963E /* Signal Producer */,
 				2FBB7D981EB1FC3300D91E32 /* Action */,
@@ -595,11 +609,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				780047EE1EA74102003AF690 /* BindingViewController.swift in Sources */,
+				2FBB7D9D1EB9B90A00D91E32 /* FlattenViewController.swift in Sources */,
 				780047EC1EA74102003AF690 /* AppDelegate.swift in Sources */,
 				78783C341EB763390047963E /* SignalProducerViewController.swift in Sources */,
 				78BEA6BC1EB093F200E31F56 /* TransformOperatorViewController.swift in Sources */,
 				78BEA6B81EB088CF00E31F56 /* CombineOperatorViewController.swift in Sources */,
 				780048261EAA120E003AF690 /* SignalViewController.swift in Sources */,
+				2FBB7D9F1EB9BBB000D91E32 /* FlattenViewModel.swift in Sources */,
 				78BEA6C41EB098F000E31F56 /* ItemSelector.swift in Sources */,
 				78BEA6AC1EADDB4200E31F56 /* ReactiveCounter.swift in Sources */,
 				2FBB7D9A1EB1FC8200D91E32 /* ValidatorAndActionViewController.swift in Sources */,
