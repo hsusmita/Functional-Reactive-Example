@@ -26,9 +26,13 @@ class FlattenViewController: UIViewController, UITableViewDataSource {
 
 		super.viewDidLoad()
 		setupTableView()
-//		setupEventObserver()
+		viewModel.ds.startWithResult { (result) in
+			print(result.value)
+		}
+		viewModel.setupDataSource()
+		//		setupEventObserver()
 
-		disposable += buttonMen.reactive.controlEvents(.touchUpInside).observe { [unowned self]
+		/*disposable += buttonMen.reactive.controlEvents(.touchUpInside).observe { [unowned self]
 			_ in
 			self.viewModel.generateEvent(category: .men)
 		}
@@ -41,12 +45,12 @@ class FlattenViewController: UIViewController, UITableViewDataSource {
 		disposable += buttomKids.reactive.controlEvents(.touchUpInside).observe { [unowned self]
 			_ in
 			self.viewModel.generateEvent(category: .kids)
-		}
+		}*/
 	}
 
 	func setupTableView() {
 		//		tableView.reactive.reloadData <~ data.output.signal.map { _ in return () }
-		//		tableView.reactive.reloadData <~ ds.producer.map{ _ in return ()}
+//				tableView.reactive.reloadData <~ ds.producer.map{ _ in return ()}
 		//		data.input.send(value: ["asd", "asd"])
 		tableViewClothes.dataSource = self
 		tableViewClothes.reactive.reloadData <~ viewModel.ds.producer.map{ _ in return () }

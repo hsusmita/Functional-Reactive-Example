@@ -15,6 +15,7 @@ class TableViewDataModel {
 	var itemName: String = ""
 	var price: Float = 0.0
 }
+
 extension TableViewDataModel {
 	var type: String {
 		return "TableViewDataModel"
@@ -92,12 +93,17 @@ class FlattenViewModel {
 			 datasourceKids.producer.skipNil()
 			])
 			.flatten(.merge)
+		
+		
 	}
 
 
 	func setupDataSource() {
+		DispatchQueue.main.asyncAfter(deadline: .now()) { [weak self] in
+			self?.datasourceMen.value?.append(MenDataModel(name: "Printed T Shirt", price: 499, size: .s))
+		}
 
-		switch currentSelection {
+		/*switch currentSelection {
 		case .men:
 			datasourceMen.value = [
 				MenDataModel(name: "Printed T Shirt", price: 499, size: .s),
@@ -121,7 +127,7 @@ class FlattenViewModel {
 				KidsDataModel(name: "DragonBallZ T Shirt Boys", price: 499, size: .xl)
 
 			]
-		}
+		}*/
 	}
 
 	//MARK: - Event Generation

@@ -22,6 +22,7 @@
 		780048201EA89ED8003AF690 /* Routable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7800481F1EA89ED8003AF690 /* Routable.swift */; };
 		780048221EA8A0D9003AF690 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048211EA8A0D9003AF690 /* Router.swift */; };
 		780048261EAA120E003AF690 /* SignalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780048251EAA120E003AF690 /* SignalViewController.swift */; };
+		783DD5AB1EBC8C9B00D1372E /* FlattenExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783DD5AA1EBC8C9B00D1372E /* FlattenExampleViewController.swift */; };
 		78783C1D1EB351F50047963E /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C1C1EB351F50047963E /* Grid.swift */; };
 		78783C211EB35FC80047963E /* GameGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C201EB35FC80047963E /* GameGridView.swift */; };
 		78783C341EB763390047963E /* SignalProducerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78783C331EB763390047963E /* SignalProducerViewController.swift */; };
@@ -106,6 +107,7 @@
 		783DD5951EB9920B00D1372E /* Game.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Game.playground; sourceTree = "<group>"; };
 		783DD5961EB9BA4D00D1372E /* Action.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Action.playground; sourceTree = "<group>"; };
 		783DD5971EB9DB8900D1372E /* Flatten.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Flatten.playground; sourceTree = "<group>"; };
+		783DD5AA1EBC8C9B00D1372E /* FlattenExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenExampleViewController.swift; sourceTree = "<group>"; };
 		78783C1C1EB351F50047963E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		78783C201EB35FC80047963E /* GameGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
 		78783C331EB763390047963E /* SignalProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				2FBB7D9C1EB9B90A00D91E32 /* FlattenViewController.swift */,
 				2FBB7D9E1EB9BBB000D91E32 /* FlattenViewModel.swift */,
+				783DD5AA1EBC8C9B00D1372E /* FlattenExampleViewController.swift */,
 			);
 			path = Flatten;
 			sourceTree = "<group>";
@@ -632,6 +635,7 @@
 				78BEA6C11EB098D000E31F56 /* ItemTableViewCell.swift in Sources */,
 				78BEA6AE1EADDB5E00E31F56 /* TurnScheduler.swift in Sources */,
 				78783C1D1EB351F50047963E /* Grid.swift in Sources */,
+				783DD5AB1EBC8C9B00D1372E /* FlattenExampleViewController.swift in Sources */,
 				78BEA6B41EAE0B4D00E31F56 /* GridCollectionViewCell.swift in Sources */,
 				780047F41EA74102003AF690 /* Functional_Reactive_Example.xcdatamodeld in Sources */,
 				78783C211EB35FC80047963E /* GameGridView.swift in Sources */,

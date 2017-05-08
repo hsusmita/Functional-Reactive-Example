@@ -44,34 +44,18 @@ let counter = ReactiveCounter(timeInterval: 1.0)
 //counter.counterSignal.observeValues { (count) in
 //	print(count)
 //}
-//counter.stopTimer()
+counter.stopTimer()
 
 
-
-class ObservingClass {
-	private let (lifetime, token) = Lifetime.make()
-	
-	let counter = ReactiveCounter(timeInterval: 1.0)
-	let observer = Observer<Int, NoError> { count in
-		print(count)
-	}
-	func observe() {
-		counter.counterSignal.observe(observer, during: lifetime)
-	}
-}
-
-final class SettingsController {
-	private let (lifetime, token) = Lifetime.make()
-	
-	func observeDefaultsChanged(_ defaults: UserDefaults = .standard) {
-		NotificationCenter.default.reactive
-			.notifications(forName: UserDefaults.didChangeNotification, object: defaults)
-			.take(during: lifetime)
-			.observeValues { [weak self] _ in self?.defaultsChanged(defaults) }
-	}
-	
-	private func defaultsChanged(_ defaults: UserDefaults) {
-		// perform some updates
-	}
-}
-
+//counter.counterSignal.flatMap(.merge) { (count)  in
+//	SignalProducer(value: "value = \(count)")
+//}.observeValues { string in
+//	print(string)
+//}
+//
+//counter.counterSignal.map { count in
+//	return "value = \(count)"
+//	}.observeValues { string in
+//	print(string)
+//}
+//
