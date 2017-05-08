@@ -94,7 +94,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-VK-kij">
-                                <rect key="frame" x="163" y="607" width="50" height="30"/>
+                                <rect key="frame" x="162.5" y="607" width="50" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="8mi-Zr-UFs"/>
                                 </constraints>
@@ -159,12 +159,17 @@
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="KlH-Tm-NdS">
+                                <rect key="frame" x="177" y="163" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xuR-bM-VUq" firstAttribute="top" secondItem="PRa-ZI-sAw" secondAttribute="bottom" constant="29" id="M5p-bL-yAO"/>
+                            <constraint firstItem="KlH-Tm-NdS" firstAttribute="centerX" secondItem="F9G-OQ-zhM" secondAttribute="centerX" id="XVW-hc-efq"/>
                             <constraint firstAttribute="trailing" secondItem="xuR-bM-VUq" secondAttribute="trailing" constant="16" id="Yp5-nn-wwR"/>
                             <constraint firstItem="PRa-ZI-sAw" firstAttribute="top" secondItem="SEF-Zr-Ng8" secondAttribute="bottom" constant="8" id="ZKD-db-mUG"/>
+                            <constraint firstItem="KlH-Tm-NdS" firstAttribute="top" secondItem="xuR-bM-VUq" secondAttribute="bottom" constant="8" id="aO2-4M-IxT"/>
                             <constraint firstAttribute="trailing" secondItem="PRa-ZI-sAw" secondAttribute="trailing" constant="16" id="bLX-L0-9pN"/>
                             <constraint firstItem="SEF-Zr-Ng8" firstAttribute="leading" secondItem="F9G-OQ-zhM" secondAttribute="leading" constant="16" id="bWK-Ge-7AT"/>
                             <constraint firstItem="SEF-Zr-Ng8" firstAttribute="top" secondItem="DRA-qj-SBY" secondAttribute="bottom" constant="8" id="c0L-oV-ha3"/>
@@ -177,6 +182,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="KlH-Tm-NdS" id="42h-Yg-tA9"/>
                         <outlet property="buttonSignIn" destination="xuR-bM-VUq" id="Yti-jY-Ods"/>
                         <outlet property="textFieldEmail" destination="SEF-Zr-Ng8" id="Kha-81-6Ou"/>
                         <outlet property="textFieldPassword" destination="PRa-ZI-sAw" id="MBx-U2-36W"/>
@@ -453,7 +459,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add your text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ebH-iL-tzj">
-                                <rect key="frame" x="20" y="239" width="355" height="21"/>
+                                <rect key="frame" x="20" y="238.5" width="355" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="sLu-h4-wBq"/>
                                 </constraints>
@@ -462,7 +468,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="P69-Rq-Rne">
-                                <rect key="frame" x="20" y="270" width="335" height="128"/>
+                                <rect key="frame" x="20" y="269.5" width="335" height="128"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.10000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="aCy-NF-owv"/>

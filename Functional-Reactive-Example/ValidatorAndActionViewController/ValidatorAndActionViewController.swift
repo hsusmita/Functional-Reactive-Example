@@ -28,10 +28,14 @@ class ValidatorAndActionViewController: UIViewController {
 	@IBOutlet weak var textFieldPassword: UITextField!
 	@IBOutlet weak var buttonSignIn: UIButton!
 
+	@IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     override func viewDidLoad() {
         super.viewDidLoad()
 		validatingProperty()
 		setupAction()
+
+		activityIndicator.hidesWhenStopped = true
+		activityIndicator.reactive.isAnimating <~ loginAction.isExecuting
     }
 
 	//MARK: - Action
@@ -146,7 +150,10 @@ class FormVieWModel {
 
 			if email == myEmail && password == myPassword {
 				sink.send(value: Person(fName: "Pulkit", lName: "Vaid"))
-				sink.sendCompleted()
+				DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3, execute: { 
+					sink.sendCompleted()
+				})
+
 			}
 			else {
 				sink.send(error: LoginError.invalidCredentials)
