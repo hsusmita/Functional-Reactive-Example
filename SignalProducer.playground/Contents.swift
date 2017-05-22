@@ -20,6 +20,8 @@ let observer: Observer<Int, NoError> = Observer.init(value: { value in
 	print("signal interrupted")
 })
 
+
+
 //SignalProducer with an action
 
 let action: () -> Int = {
@@ -33,6 +35,7 @@ let actionSignalProducer: SignalProducer<Int, NoError> = SignalProducer(action)
 //SignalProducer with single value
 
 let singleValueSignalProducer: SignalProducer<Int, NoError> = SignalProducer(value: 5)
+
 //singleValueSignalProducer.start(observer)
 
 //SignalProducer with sequence of values
@@ -40,24 +43,28 @@ let singleValueSignalProducer: SignalProducer<Int, NoError> = SignalProducer(val
 let sequenceSignalProducer: SignalProducer<Int, NoError> = SignalProducer([1, 2, 3, 4, 5])
 //sequenceSignalProducer.start(observer)
 
-//SignalProducer from a signal
+
+/*//SignalProducer from a signal
 
 let (signal, signalObserver) = Signal<String, NoError>.pipe()
 
-//let signalProducer: SignalProducer<String, NoError> = SignalProducer(signal)
+
+let signalProducer: SignalProducer<String, NoError> = SignalProducer(signal)
+
 let producerObserver: Observer<String, NoError> = Observer(value: { value in
 	print("value = \(value)")
 }, completed: {
 	print("completed")
 })
-//signalProducer.start(producerObserver)
 
 signalObserver.send(value: "first String")
 signalObserver.send(value: "second String")
+signalProducer.start(producerObserver)
+
 signalObserver.send(value: "third String")
 signalObserver.send(value: "fourth String")
 signalObserver.sendCompleted()
-
+*/
 
 class SignalProducerDemo {
 	var signalProducer: SignalProducer<String, NoError>
@@ -65,7 +72,9 @@ class SignalProducerDemo {
 	
 	init() {
 		compositeDisposable = CompositeDisposable()
-		signalProducer = SignalProducer { (observer, disposable) in
+		
+		signalProducer = SignalProducer {
+			(observer, disposable) in
 			disposable.add {
 				print("I've been disposed! I can clean my resources ;)")
 			}
@@ -77,16 +86,16 @@ class SignalProducerDemo {
 				}
 			})
 			DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-				if !disposable.isDisposed {
+				//if !disposable.isDisposed {
 					print("Sending second value")
 					observer.send(value: "2")
-				}
+				//}
 			})
 			DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-				if !disposable.isDisposed {
+				//if !disposable.isDisposed {
 					print("Sending third value")
 					observer.send(value: "3")
-				}
+				//}
 			})
 		}
 	}
@@ -104,7 +113,8 @@ class SignalProducerDemo {
 	}
 	
 	func observeWithSignal() {
-		signalProducer.startWithSignal { (signal, disposable) in
+		signalProducer.startWithSignal {
+			(signal, disposable) in
 			signal.observeValues({ value in
 				print("inside the signal = \(value)")
 				if !disposable.isDisposed {
@@ -119,6 +129,7 @@ class SignalProducerDemo {
 		DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
 			self.compositeDisposable.dispose()
 		}
+		
 	}
 	
 	deinit {
@@ -127,5 +138,4 @@ class SignalProducerDemo {
 }
 
 let demo = SignalProducerDemo().observeWithSignal()
-
 

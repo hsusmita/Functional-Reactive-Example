@@ -108,6 +108,7 @@
 		783DD5961EB9BA4D00D1372E /* Action.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Action.playground; sourceTree = "<group>"; };
 		783DD5971EB9DB8900D1372E /* Flatten.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Flatten.playground; sourceTree = "<group>"; };
 		783DD5AA1EBC8C9B00D1372E /* FlattenExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlattenExampleViewController.swift; sourceTree = "<group>"; };
+		785E95831EC98528004B54DE /* Limit.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Limit.playground; sourceTree = "<group>"; };
 		78783C1C1EB351F50047963E /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
 		78783C201EB35FC80047963E /* GameGridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameGridView.swift; sourceTree = "<group>"; };
 		78783C331EB763390047963E /* SignalProducerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignalProducerViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		78BEA6BF1EB098D000E31F56 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemTableViewCell.swift; path = "Functional-Reactive-Example/Transform/ItemTableViewCell.swift"; sourceTree = "<group>"; };
 		78BEA6C01EB098D000E31F56 /* ItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ItemTableViewCell.xib; path = "Functional-Reactive-Example/Transform/ItemTableViewCell.xib"; sourceTree = "<group>"; };
 		78BEA6C31EB098F000E31F56 /* ItemSelector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemSelector.swift; path = "Functional-Reactive-Example/Transform/ItemSelector.swift"; sourceTree = "<group>"; };
+		78E8B4A41EC30B0D009E5143 /* Transform.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Transform.playground; sourceTree = "<group>"; };
 		ABF5B0D4F6DCD5C36F0475B7 /* Pods-Functional-Reactive-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.release.xcconfig"; sourceTree = "<group>"; };
 		BC01E2609133733683D3E539 /* Pods_Functional_Reactive_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Functional_Reactive_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F322110028A3FB2B7314BBCA /* Pods-Functional-Reactive-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Functional-Reactive-Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Functional-Reactive-Example/Pods-Functional-Reactive-Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +199,8 @@
 		780047DF1EA74101003AF690 = {
 			isa = PBXGroup;
 			children = (
+				785E95831EC98528004B54DE /* Limit.playground */,
+				78E8B4A41EC30B0D009E5143 /* Transform.playground */,
 				783DD5971EB9DB8900D1372E /* Flatten.playground */,
 				783DD5961EB9BA4D00D1372E /* Action.playground */,
 				783DD5951EB9920B00D1372E /* Game.playground */,

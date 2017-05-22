@@ -8,7 +8,29 @@ import Result
 var str = "Hello, playground"
 
 let (signal, observer) = Signal<Int, NoError>.pipe()
+observer.send(value: 1)
+observer.send(value: 2)
+observer.send(value: 3)
+observer.send(value: 4)
+//observer.sendCompleted()
 
+let signalObserver = Observer<Int, NoError>(
+	value: { value in
+	print("value = \(value)")
+}, completed: { 
+	print("completed")
+}, interrupted: {
+	print("interrupted")
+})
+
+signal.observe(signalObserver)
+let eventObserver = Observer<Int, NoError>({ event in
+	print(event.value)
+})
+signal.observe(eventObserver)
+
+observer.send(value: 10)
+/*
 /*let signalObserver: Observer<Int, NoError> = Observer(value: { value in
 	print("value = \(value)")
 }, failed: { (error) in
@@ -40,14 +62,15 @@ let signalObserver: Observer<Int, NoError> = Observer { event in
 let disposable = signalProducer.start(signalObserver)
 */
 
-signal.on(value: { count in
-	print("side effects = \(count)")
-})
-
-//signal.observe(signalObserver)
-
-observer.send(value: 1)
-observer.send(value: 2)
-observer.send(value: 3)
-observer.sendCompleted()
-
+//signal.on(value: { count in
+//	print("side effects = \(count)")
+//})
+//
+////signal.observe(signalObserver)
+//
+//observer.send(value: 1)
+//observer.send(value: 2)
+//observer.send(value: 3)
+//observer.sendCompleted()
+//
+*/
